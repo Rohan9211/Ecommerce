@@ -14,6 +14,7 @@ const Nav = () => {
       display: flex;
       gap: 4.8rem;
       align-items: center;
+      margin-left:57%;
 
       .navbar-link {
         &:link,
@@ -167,12 +168,20 @@ const Nav = () => {
     <Nav>
       <div className={menuIcon ? "navbar active" : "navbar"}>
         <ul className="navbar-lists">
+        <li>
+            <NavLink
+              to="/contact"
+              className="navbar-link "
+              onClick={() => setMenuIcon(false)}>
+              Login/Register
+            </NavLink>
+          </li>
           <li>
             <NavLink
               to="/"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}>
-              Home
+              Language
             </NavLink>
           </li>
           <li>
@@ -180,32 +189,10 @@ const Nav = () => {
               to="/products"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}>
-              Shops
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
-              Pages
+              Currency
             </NavLink>
           </li>
           
-          <li>
-            <NavLink
-              to="/contact"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
-              Contact
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/cart" className="navbar-link cart-trolley--link">
-              <FiShoppingCart className="cart-trolley" />
-              <span className="cart-total--item"> {total_item} </span>
-            </NavLink>
-          </li>
         </ul>
 
         {/* two button for open and close of menu */}
